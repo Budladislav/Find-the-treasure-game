@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <title id="title_lang">Find the treasure game</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <!-- INTERFACE -->
+  <div class="all-screen-container">
+
+    <!-- HEADER -->
+    <div class="information">
+
+      <div class="timer element-look">
+        <h1><span id="timer-lang"> sec.</span></h1>
+      </div>
+
+      <div class="status-bar element-look">
+        <h1 id="info" align="center">
+          Find the treasure by clicking on game field
+        </h1>
+      </div>
+      
+      <span class="button-again element-look">
+        <img id="again" src="images/rewind.png" alt="">
+      </span>
+
+    </div>
+    <!-- HEADER end -->
+
+    <!-- GAME FIELD -->
+      <div id="gameField" class="game-field element-look"></div> 
+    <!-- GAME FIELD end -->
+    
+    <!-- FOOTER -->
+    <div class="footer element-look">
+
+    	<h2 align="center">
+        <span id="easteregg">by</span>
+        <a href="http://www.budladislav.info/">Budladislav</a>,
+        <span id="month_lang">dec</span>. 2<span id="visibility">0</span>18
+      </h2>
+
+      <img id="button-settings" src="images/hammer.png" height="35px">
+    </div>
+    <!-- FOOTER end -->
+
+    <!-- SETTINGS WINDOW -->
+    <div class="settings-container">
+
+      <div class="settings-window">
+
+        <img id="button-close" src="images/cross.png" height="30px">
+        <h1 align="center" id="settings_headline_lang">Settings</h1>
+        <ul class="menu">
+          <li id="goal-visibility">
+            <label for="checkbox-visibility">
+              <h2 id="option_visibility_lang">
+                Visibility
+              </h2>
+            </label>
+            <input type="checkbox" id="checkbox-visibility"/>
+          </li>
+          <li><h2>
+            <span id="option_language_lang">Language</span>
+            <span id="language">English</span>
+          </h2></li>
+          <li>
+            <h2 id="option_size_lang">Circles size</h2>
+            <input id="size_range" type="range" min="5" max="25" step="5" value="15">
+          </li>
+          <li id="audio">
+            <label for="checkbox-audio">
+              <h2 id="option_audio_lang">
+                Audio
+              </h2>
+            </label>
+            <input type="checkbox" id="checkbox-audio"/>
+          </li>
+        </ul>
+        
+        <div class="button-set"><h1 id="set_lang">Set</h1></div>
+        
+      </div>
+    </div>
+    <!-- SETTINGS WINDOW end -->
+  </div>
+  <!-- INTERFACE end-->
+  
+  <!-- Scripts -->
+  <script src="jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <!-- Scripts end-->
+</body>
+</html>

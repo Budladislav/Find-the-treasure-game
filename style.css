@@ -1,0 +1,284 @@
+html,body {
+	margin: 0;
+	height: 100%;
+	font-family: Verdana;
+	font-size: 1em;
+}
+.all-screen-container {
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+	min-width: 600px;
+	min-height: 600px;
+	background-color: grey;
+  user-select: none; 
+}
+.all-screen-container .information {
+	display: flex;
+	margin: 10px 10px 0 10px;
+	min-height: 100px; 
+	max-height: 10%;
+	z-index: 1;
+}
+
+/*general appearance for timer, status-bar, button-again, game-field and footer*/
+.element-look { 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	background-color: rgb(192,192,192);
+}
+
+.all-screen-container .information .timer {
+  padding: 10px;
+  font-size: 0.75em;
+  margin-right: 10px;
+}
+
+.all-screen-container .information .status-bar {
+	flex: 1 0 1em; /* when flex-basis = auto, block out of boundaries due to text*/
+  padding: 0 5px;
+}
+
+.all-screen-container .information .status-bar h1 {
+  margin: 0;
+}
+
+.all-screen-container .information .button-again {
+  cursor: pointer;
+	min-width: 100px;
+	display: none; /*start-game state*/
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+.all-screen-container .information .button-again:hover {
+  background: rgb(230,230,230);
+}
+
+.all-screen-container .information .button-again img {
+	height: 75px;
+  transition: 0.5s;
+}
+
+.all-screen-container .game-field {
+	flex: 1 0 auto;
+	margin: 10px;
+}
+
+.all-screen-container .footer {
+	max-height: 60px;
+	margin: 0 10px 10px 10px;
+	z-index: 1;
+}
+
+.all-screen-container .footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.all-screen-container .footer a:visited {
+  color: black;
+}
+
+.all-screen-container .footer a:hover {
+  color: rgb(0, 150, 150);
+  text-decoration: underline;
+}
+
+.all-screen-container .footer a:active {
+  color: rgb(0, 100, 100); /* #008080 */
+  text-decoration: none;
+}
+
+.all-screen-container .footer #button-settings {
+  transform: rotate(-45deg);
+	position: relative;
+	left: 35px;
+	cursor: pointer;
+  transition: 0.5s;
+  margin-bottom: 5px;
+}
+
+.all-screen-container .footer #button-settings:hover {
+  transform: rotate(315deg);
+}
+
+.all-screen-container .footer #button-settings:active {
+  background-color: yellow;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.settings-container {
+  position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  height: 100%;
+  width: 100%;
+  min-width: 600px;
+  min-height: 600px;
+  /* dasable visability. property opasity does not fit because inheritance*/
+  background-color: rgba(255,255,255,0);
+  z-index: -1; /* managment of open/close menu (-1/2) */
+ }
+
+.settings-container .settings-window {
+	background-color: rgba(150, 150, 150, 0.95);
+	border: 1px dashed black;
+	position: absolute;
+	min-width: 520px;
+  min-height: 450px;
+  max-width: 70%;
+  max-height: 70%;
+  display: flex;
+  flex-direction: column;
+  flex-flow: flex-start;
+}
+
+.settings-container .settings-window #settings_headline_lang {
+  margin: 5px;
+}
+
+.settings-container .settings-window h2 {
+  display:inline;
+}
+
+.settings-container .settings-window ul {
+  list-style: none;
+  padding: 0;
+}
+
+.settings-container .settings-window li {
+  padding-top: 20px;  
+  text-align: center; 
+}
+
+.settings-container .settings-window #button-close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+  transition: 1s;
+}
+
+.settings-container .settings-window #button-close:hover {
+  transform: rotate(360deg);
+}
+
+.settings-container .settings-window #button-close:active {
+  transform: scale(1.5);
+}
+
+.settings-container .settings-window input[type="checkbox"] {
+  transform: scale(2.5);
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.settings-container .settings-window #size_range {
+  margin-left: 10px;  
+}
+
+.settings-container .settings-window  #language {
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
+.settings-container .settings-window  #language:active {
+  color: black;
+}
+
+.settings-container .settings-window .button-set {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  background: linear-gradient(45deg, lightgray 30%, gray);
+  box-shadow: 0 -2px 15px 6px grey,
+            0 2px 15px 3px grey;
+  transition: 0.5s;
+  position: absolute;
+  bottom: 5%;
+  align-self: center;
+  height: 3em;
+  padding: 0 10px;
+  
+}
+
+.settings-container .settings-window .button-set:hover {
+  box-shadow: 0 0 20px 5px yellow;
+}
+
+.settings-container .settings-window .button-set:active {
+  box-shadow: 0 0 20px 5px red;
+}
+
+
+
+/*animation for easter egg "by" */
+@keyframes hang_on_the_corner {
+  20% {transform: rotate(110deg);}
+  40% {transform: rotate(40deg);}
+  60% {transform: rotate(90deg);}
+  80%, to {transform: rotate(80deg);}
+}
+
+@keyframes fall { 
+  100% {
+    transform: scaleY(0.05);}
+}
+/*animation for easter egg "by" end */
+
+/*animation for easter egg "timer" */
+@keyframes example {
+  to {transform: translateY(-200px); }
+/*  0%   {width: 10px;}
+  25%  {width: 15px;}
+  50%  {width: 20px;}
+  75%  {width: 25px;}
+  100% {width: 30px;}*/
+}
+/*animation for easter egg "timer" end */
+
+/* for target-circle effect-animation */
+.rotate-shadows {
+  position: absolute;
+}
+.rotate-shadows:after,
+.rotate-shadows:before {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+}
+.rotate-shadows:before {
+  box-shadow: inset 0 10px 0 rgba(0, 250, 250, 0.6), inset 10px 0 0 rgba(0, 200, 200, 0.6), inset 0 -10px 0 rgba(0, 150, 200, 0.6), inset -10px 0 0 rgba(0, 200, 250, 0.6);
+  animation: rotate-before 2s -0.5s linear infinite;
+}
+.rotate-shadows:after {
+  box-shadow: inset 0 10px 0 rgba(250, 250, 0, 0.6), inset 10px 0 0 rgba(250, 200, 0, 0.6), inset 0 -10px 0 rgba(250, 150, 0, 0.6), inset -10px 0 0 rgba(250, 100, 0, 0.6);
+  animation: rotate-after 2s -0.5s linear infinite;
+}
+@keyframes rotate-after {
+  0% {transform: rotateZ(0deg) scaleX(1) scaleY(1);}
+  50% {transform: rotateZ(180deg) scaleX(0.82) scaleY(0.95);}
+  100% {transform: rotateZ(360deg) scaleX(1) scaleY(1);}
+}
+@keyframes rotate-before {
+  0% {transform: rotateZ(0deg) scaleX(1) scaleY(1);}
+  50% {transform: rotateZ(-180deg) scaleX(0.95) scaleY(0.85);}
+  100% {transform: rotateZ(-360deg) scaleX(1) scaleY(1);}
+
+/* for target-circle effect-animation end */
+
+
